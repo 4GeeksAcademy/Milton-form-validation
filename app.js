@@ -28,5 +28,15 @@ btnSubmit.addEventListener("click", (e) => {
 });
 
 btnCancel.addEventListener("click", () => {
-  location.reload();
+  // location.reload();
+  for (let i = 0; i < inputs.length; i++) {
+    if (inputs[i].tagName === "SELECT") {
+      inputs[i].value = "Pick a state";
+      inputs[i].style.backgroundColor = "white";
+    } else {
+      inputs[i].style.backgroundColor = "white";
+      inputs[i].value = "";
+      alert.style.display = "none";
+    }
+  }
 });
